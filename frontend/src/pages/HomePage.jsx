@@ -1,4 +1,9 @@
-import Main from "../components/smart/Main"
+import Shelf from "../components/smart/Shelf"
 export default function HomePage() {
-    return <Main />
+    return (
+        <>
+            <h1>I'm the homepage!</h1>
+            <Shelf />
+        </>
+    )
 }
