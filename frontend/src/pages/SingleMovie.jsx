@@ -1,31 +1,11 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
-
+import useSingleMovieFetch from "../hooks/useSingleMovieFetch"
 
 export default function SingleMovie() {
     const { id } = useParams();
-    const [singleMovie, setSingleMovie] = useState({
-        state: "loading"
-    });
+    const singleMovie = useSingleMovieFetch(id)
 
-    useEffect(() => {
-        fetch(`http://localhost:3000/movies/${id}`)
-            .then((res) => res.json())
-            .then((data) => {
-                setSingleMovie({
-                    state: "success",
-                    movie_data: data
-                })
-            })
-            .catch((err) => {
-                setSingleMovie({
-                    state: "error",
-                    message: `error type: ${err}`
-                })
-            })
-    }, [])
-
-
+    console.log(singleMovie.movie_data)
     switch (singleMovie.state) {
         case 'loading':
             return <h1>loading...</h1>
