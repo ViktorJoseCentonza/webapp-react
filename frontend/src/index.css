@@ -1,6 +1,35 @@
 @import 'bootstrap';
 
+img {
+    width: 100%;
+}
+
+nav a {
+    color: inherit;
+    text-decoration: inherit;
+
+    &:hover {
+        color: rgb(172, 0, 0);
+    }
+}
+
+header {
+    padding: 1rem 0;
+
+    h1 {
+        color: rgb(172, 0, 0);
+    }
+}
+
+footer {
+    padding: 1rem 0;
+}
+
 .star-container {
     width: 150px;
     height: 25px;
+}
+
+.img-wrap {
+    width: 230px;
 }

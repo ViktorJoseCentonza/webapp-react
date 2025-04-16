@@ -1,4 +1,5 @@
 export default function RatingUi(props) {
+    const review = props
     let rating = props.vote
     const stars = []
     //console.log(rating)
@@ -8,9 +9,9 @@ export default function RatingUi(props) {
     console.log(stars)
     return (
         <div className="star-container d-flex gap-1">
-            {stars.map((star, i) => {
+            {stars.map((_, i) => {
                 return (
-                    <img className="" key={`rating-`} src="/star.svg"></img>
+                    <img className="" key={i} src="/star.svg"></img>
                 )
             })}
         </div>

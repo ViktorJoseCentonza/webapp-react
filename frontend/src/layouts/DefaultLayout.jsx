@@ -1,14 +1,14 @@
 import { Outlet } from "react-router-dom";
-import Header from "../components/smart/Header";
-import Footer from "../components/smart/Footer";
+import HeaderUi from "../components/dumb/HeaderUi";
+import FooterUi from "../components/dumb/FooterUi";
 export default function DefaultLayout() {
     return (
         <>
-            <Header />
-            <main>
+            <HeaderUi />
+            <main className="bg-secondary pt-3 pb-3 flex-grow-1">
                 <Outlet />
             </main>
-            <Footer />
+            <FooterUi />
         </>
     );
 }

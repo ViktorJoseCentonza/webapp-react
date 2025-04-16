@@ -13,7 +13,6 @@ export default function SingleMovie() {
         case 'success':
             return (
                 <>
-                    <h1>I'm the single movie page for {singleMovie.movie_data[0].title}!</h1>
                     <MovieCardUi data={singleMovie} />
                 </>
             )
