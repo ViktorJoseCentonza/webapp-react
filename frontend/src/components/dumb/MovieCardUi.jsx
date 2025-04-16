@@ -1,3 +1,5 @@
+import ReviewsUi from "./ReviewsUi"
+
 export default function MovieCardUi(props) {
     const singleMovie = props.data.movie_data
     console.log(singleMovie)
@@ -10,9 +12,12 @@ export default function MovieCardUi(props) {
                         <div className="card-body">
                             <h5 className="card-title">{singleMovie[0].title}</h5>
                             <span className="movie_info">{singleMovie[0].abstract}</span>
+
                         </div>
                     </div>
                 </div>
+
+                <ReviewsUi data={singleMovie} />
             </div>
         </>
     )

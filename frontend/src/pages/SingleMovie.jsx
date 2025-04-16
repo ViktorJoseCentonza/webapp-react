@@ -5,7 +5,7 @@ export default function SingleMovie() {
     const { id } = useParams();
     const singleMovie = useSingleMovieFetch(id)
 
-    console.log(singleMovie.movie_data)
+    //console.log(singleMovie.movie_data)
     switch (singleMovie.state) {
         case 'loading':
             return <h1>loading...</h1>
