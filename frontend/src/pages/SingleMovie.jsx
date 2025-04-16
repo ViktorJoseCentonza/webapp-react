@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 import useSingleMovieFetch from "../hooks/useSingleMovieFetch"
-
+import MovieCardUi from "../components/dumb/MovieCardUi";
 export default function SingleMovie() {
     const { id } = useParams();
     const singleMovie = useSingleMovieFetch(id)
@@ -12,7 +12,10 @@ export default function SingleMovie() {
 
         case 'success':
             return (
-                <h1>I'm the single movie page for {singleMovie.movie_data[0].title}!</h1>
+                <>
+                    <h1>I'm the single movie page for {singleMovie.movie_data[0].title}!</h1>
+                    <MovieCardUi data={singleMovie} />
+                </>
             )
 
         case 'error':
