@@ -1,23 +1,20 @@
 import { useMovies } from "../../contexts/MovieContext";
 import ShelfUi from "../dumb/ShelfUi";
+import LoadingUi from "../dumb/LoadingUi";
+import ServerErrorPage from "../../pages/ServerErrorPage";
 export default function Shelf() {
 
     const { movies } = useMovies()
 
     switch (movies.state) {
         case 'loading':
-            return <h1>loading...</h1>
+            return <LoadingUi />
 
         case 'success':
             return <ShelfUi data={movies.movie_data} />
 
         case 'error':
-            return (
-                <>
-                    <h1>{movies.state}</h1>
-                    <span>{movies.message}</span>
-                </>
-            )
+            return <ServerErrorPage error={movies.message} />
     }
 
 }
