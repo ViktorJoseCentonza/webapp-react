@@ -2,7 +2,7 @@ import RatingUi from "./RatingUi"
 
 export default function ReviewsUi(props) {
     const reviews = props.data[0].reviews
-    console.log(reviews)
+    //console.log(reviews)
     return (
         <section className="mt-5">
             {reviews.map((review, i) => {

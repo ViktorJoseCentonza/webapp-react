@@ -3,7 +3,7 @@ import RatingUi from "./RatingUi"
 
 export default function MovieCardUi(props) {
     const singleMovie = props.data.movie_data
-    console.log(singleMovie)
+    //console.log(singleMovie)
     return (
         <>
             <div className="container pt-5">

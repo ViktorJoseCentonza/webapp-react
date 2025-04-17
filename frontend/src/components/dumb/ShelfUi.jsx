@@ -2,7 +2,7 @@ import RatingUi from "./RatingUi"
 import { NavLink } from "react-router-dom"
 export default function ShelfUi(props) {
     const movieList = props.data
-    console.log(movieList)
+    //console.log(movieList)
     return (
         <>
             <h1 className="ps-5">Current movies</h1>

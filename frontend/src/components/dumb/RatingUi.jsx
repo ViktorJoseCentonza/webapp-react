@@ -6,7 +6,7 @@ export default function RatingUi(props) {
     for (rating; rating > 0; rating--) {
         stars.push('*')
     }
-    console.log(stars)
+    //console.log(stars)
     return (
         <div className="star-container d-flex gap-1">
             {stars.map((_, i) => {
