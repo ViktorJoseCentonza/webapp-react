@@ -11,8 +11,9 @@ export default function ShelfUi(props) {
                 {movieList.map((singleMovie, index) => {
                     //{ console.log(singleMovie) }
                     return (
-                        <NavLink to={`/movie/${singleMovie.id}`}>
-                            <div className="p-2 bg-dark rounded position-relative d-flex flex-column justify-content-between align-items-center" key={`${singleMovie.title}-card-${index}`}>
+                        <NavLink key={`${singleMovie.title}-card-${index}`
+                        } to={`/movie/${singleMovie.id}`}>
+                            <div className="p-2 bg-dark rounded position-relative d-flex flex-column justify-content-between align-items-center" >
                                 <div className="img-wrap">
                                     <img className="img-fluid" style={{ height: "280px" }} src={`http://localhost:3000/${singleMovie.image}`} alt="" />
                                 </div>

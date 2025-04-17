@@ -9,10 +9,18 @@ export default function useSingleMovieFetch(id) {
         fetch(`http://localhost:3000/movies/${id}`)
             .then((res) => res.json())
             .then((data) => {
-                setSingleMovie({
-                    state: "success",
-                    movie_data: data
-                })
+                console.log(data)
+                if (!data.error) {
+                    setSingleMovie({
+                        state: "success",
+                        movie_data: data
+                    })
+                } else {
+                    setSingleMovie({
+                        state: "error",
+                        message: `You weren't supposed to get here! 404`
+                    })
+                }
             })
             .catch((err) => {
                 setSingleMovie({
