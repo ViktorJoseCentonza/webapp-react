@@ -3,7 +3,7 @@ function HeaderUi() {
     return (
         <>
             <header className="d-flex justify-content-evenly align-items-center">
-                <h1>ViktorFlix</h1>
+                <NavLink className="text-decoration-none" to="/" ><h1>ViktorFlix</h1></NavLink>
                 <nav className="d-flex gap-4 text-decoration-none text-light fs-5 fw-bold">
                     <NavLink to="/" >Home</NavLink >
                     <NavLink to="#" >Recent</NavLink >
