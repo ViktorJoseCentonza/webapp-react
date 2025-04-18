@@ -3,6 +3,7 @@ import RatingUi from "./RatingUi"
 
 export default function MovieCardUi(props) {
     const singleMovie = props.data.movie_data
+    const movieId = props.movieId
     //console.log(singleMovie)
     return (
         <>
@@ -23,15 +24,11 @@ export default function MovieCardUi(props) {
                         <p className="mt-2 movie_info fs-5">{singleMovie[0].abstract}</p>
 
                         <span>Released in {singleMovie[0].release_year}</span>
-
-
-
-
                     </div>
                 </div>
 
 
-                <ReviewsUi data={singleMovie} />
+                <ReviewsUi data={singleMovie} movieId={movieId} />
             </div>
         </>
     )

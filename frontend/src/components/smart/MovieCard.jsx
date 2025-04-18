@@ -14,7 +14,7 @@ export default function SingleMovie() {
             return <LoadingUi />
 
         case 'success':
-            return <MovieCardUi data={singleMovie} />
+            return <MovieCardUi data={singleMovie} movieId={id} />
 
         case 'error':
             return <ServerErrorPage error={singleMovie.message} />
