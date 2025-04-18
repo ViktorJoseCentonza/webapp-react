@@ -15,6 +15,19 @@ export default function ReviewsUi(props) {
                     </div>
                 )
             })}
+
+            <div class="mb-3 text-center ">
+                <label for="" class="form-label"></label>
+                <textarea class="form-control bg-dark" name="" id="Add your review here!" rows="3"></textarea>
+                <button
+                    type="submit"
+                    class="btn btn-light mt-3"
+                >
+                    Submit
+                </button>
+
+            </div>
+
         </section>
 
     )

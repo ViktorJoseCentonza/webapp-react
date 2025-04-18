@@ -4,18 +4,44 @@ const AuthContext = createContext();
 
 function AuthProvider({ children }) {
     const [isLogged, setIsLogged] = useState(false)
+    const [userData, setUserData] = useState(null)
     const [state, setState] = useState({
         status: "idle", // idle, loading, success, error
         message: "",
     });
 
+    //check token presence, if found check if valid and fetch user data
     useEffect(() => {
+        console.log("token check running...");
         const token = localStorage.getItem("jwt_token");
+        console.log(`token is ${token}`);
+
         if (token) {
-            setIsLogged(true)
-        } else {
-            setIsLogged(false); // No token found, user is not logged in
+            console.log("token found!")
+            fetch('http://localhost:3000/users/auth', {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(res => {
+                    if (!res.ok) {
+                        throw new Error('Invalid token or failed request');
+                    }
+                    return res.json();
+                })
+                .then(data => {
+                    // userData now contains your user's info
+                    console.log("token verified! transferring user data...")
+                    setIsLogged(true)
+                    setUserData(data)
+                })
+                .catch(error => {
+                    console.error('Authentication failed:', error);
+                });
         }
+
     }, []);
 
     const login = (email, password, navigate) => {
